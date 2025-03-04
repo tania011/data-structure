@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void twoSum(int nums[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (nums[i] + nums[j] == target) {
+                printf("%d %d\n", i, j);
+                return; // Since there is exactly one solution, we can return early.
+            }
+        }
+    }
+}
+
+int main() {
+    int n;
+    scanf("%d", &n); // Read the size of the array
+
+    int nums[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &nums[i]); // Read the array elements
+    }
+
+    int target;
+    scanf("%d", &target); // Read the target value
+
+    twoSum(nums, n, target);
+
+    return 0;
+}
+
