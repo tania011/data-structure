@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+void removeElement(int arr[], int *n, int val) {
+    int i, j = 0;
+    for (i = 0; i < *n; i++) {
+        if (arr[i] != val) {
+            arr[j++] = arr[i];
+        }
+    }
+    *n = j; // Update the new size of the array
+}
+
+int main() {
+    int n, val;
+    
+    // Read the size of the array
+    scanf("%d", &n);
+    
+    int arr[n];
+    
+    // Read the elements of the array
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    // Read the element to be removed
+    scanf("%d", &val);
+    
+    // Remove occurrences of val
+    removeElement(arr, &n, val);
+    
+    // Print the modified array
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    return 0;
+}
+
