@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int singleNumber(int* nums,int numsSize){
+    int result = 0;
+    for(int i=0;i<numsSize;i++){
+        result ^= nums[i];
+    }
+    return result;
+}
+
+int main() {
+
+    int N;
+    scanf("%d", &N);
+    int nums[N];
+    for(int i=0;i<N;i++){
+        scanf("%d", &nums[i]);
+    }
+    int single = singleNumber(nums,N);
+    printf("%d\n", single);
+    return 0;
+}
